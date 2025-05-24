@@ -1,7 +1,9 @@
 <div class="layout" [ngClass]="themeService.$themeSignal$()">
   <app-layout-header/>
   <!---->
-  <router-outlet/>
+  <div class="layout-body">
+    <router-outlet/>
+  </div>
   <!---->
   <app-layout-footer/>
 </div>

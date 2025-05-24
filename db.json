@@ -1,12 +1,3 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "Getting Started with Angular",
-      "author": "John Doe",
-      "date": "2024-01-05T10:00:00Z",
-      "description": "A quick start guide to Angular.",
-      "content": "Full article content goes here..."
-    }
-  ]
+  "posts": []
 }

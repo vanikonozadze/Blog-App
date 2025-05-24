@@ -1,3 +1,5 @@
-<div class="post-list">
-  <app-post-card *ngFor="let item of [].constructor(10)" />
+<div class="post-list" *ngIf="posts$ | async as posts">
+  @for(post of posts; track post){
+    <app-post-card [postData]="post"/>
+  }
 </div>
