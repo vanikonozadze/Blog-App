@@ -12,39 +12,42 @@
   user-select: none;
   &-routing{
     display: flex;
-  }
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
+    button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span.material-symbols-outlined {
-      font-size: 28px;
-      color: var(--header-icon, #555);
-      transition: color 0.3s ease;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: var(--button-hover-bg, #f0f0f0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       span.material-symbols-outlined {
-        color: var(--button-hover-icon, #000);
+        font-size: 28px;
+        color: var(--header-icon, #555);
+        transition: color 0.3s ease;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--button-hover-bg, #f0f0f0);
+
+        span.material-symbols-outlined {
+          color: var(--button-hover-icon, #000);
+        }
       }
     }
   }
-
+  h1{
+    font-weight: bold;
+  }
   .theme-control {
     width: 190px;
     display: flex;
     align-items: center;
+    gap: 20px;
   }
 }
 
@@ -63,3 +66,4 @@
   --button-hover-bg: #f0f0f0;
   --button-hover-icon: #000;
 }
+

@@ -7,19 +7,16 @@
   padding: 0;
   font-family: system-ui;
 }
-
 html,
 body {
   position: relative;
   min-height: 100%;
 }
-
 body {
   overflow-x: hidden;
   user-select: none;
   -webkit-user-select: none;
 }
-
 html,
 body,
 div,
@@ -105,13 +102,11 @@ video {
   border: 0;
   vertical-align: baseline;
 }
-
 iframe {
   margin: 0;
   padding: 0;
   border: 0;
 }
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -126,29 +121,24 @@ nav,
 section {
   display: block;
 }
-
 ol,
 ul {
   list-style: none;
 }
-
 blockquote,
 q {
   quotes: none;
 }
-
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
   content: none;
 }
-
 table {
   border-spacing: 0;
   border-collapse: collapse;
 }
-
 a,
 a:hover,
 a:active,
@@ -156,35 +146,29 @@ a:visited,
 a:focus {
   text-decoration: none;
 }
-
 button {
   border: 0;
   background-color: transparent;
   cursor: pointer;
-
   &:disabled {
     cursor: default;
   }
 }
-
 input {
   border: 0;
   background-color: transparent;
   outline: none;
-
   /* Chrome, Safari, Edge, Opera */
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
-
   /* Firefox */
   input[type='number'] {
     -moz-appearance: textfield;
   }
 }
-
 h1,
 h2,
 h3,
@@ -192,41 +176,35 @@ h4,
 h5 {
   font-weight: normal;
 }
-
 .dark {
   background-color: #333;
   color: #fff;
-
   .header {
     background-color: #444;
     color: #fff;
   }
-
   button {
     background-color: #444;
     color: #fff;
-
+    border-radius: 15px;
     &:hover {
       background-color: #555;
     }
   }
-
   h1 {
     color: #fff;
   }
 }
-
 .light {
   background-color: #fff;
   color: #171717;
-
   .header {
     background-color: #eaeaea;
     color: #333;
   }
-
   button {
     border-color: #d2d2d2;
     color: #171717;
+    border-radius: 15px;
   }
 }

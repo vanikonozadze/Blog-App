@@ -1,17 +1,24 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { PostCardComponent } from '../../components/post-card/post-card.component';
 import { AsyncPipe, NgIf, NgForOf } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { selectPosts } from '../../../../store/post/post.selectors';
-import { AppState } from '../../../../store/app.state';
-import { loadPosts } from '../../../../store/post/post.actions';
+import { selectFilteredPosts } from '../../../../../store/post/post.selectors';
+import { AppState } from '../../../../../store/app.state';
+import {
+  loadPosts,
+  setPostFilterDate,
+  setPostFilterTitle,
+} from '../../../../../store/post/post.actions';
 import { combineLatest, map, tap } from 'rxjs';
-import { PaginationService } from '../../../../core/services/pagination.service';
+import { PaginationService } from '../../../../../core/services/pagination.service';
+import { FormsModule } from '@angular/forms';
+import { CardComponent } from '../../../components/card/card.component';
+import { PaginationComponent } from '../../../components/pagination/pagination.component';
+import { FilterComponent } from '../../../components/filter/filter.component';
 
 @Component({
   selector: 'app-post-list',
   standalone: true,
-  imports: [PostCardComponent, NgIf, AsyncPipe, NgForOf],
+  imports: [NgIf, AsyncPipe, NgForOf, FormsModule, CardComponent],
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,7 +32,7 @@ export class PostListComponent {
   }
 
   posts$ = this.store
-    .select(selectPosts)
+    .select(selectFilteredPosts)
     .pipe(tap((posts) => this.paginationService.setTotalItems(posts.length)));
 
   paginatedPosts$ = combineLatest([
@@ -36,16 +43,4 @@ export class PostListComponent {
       this.paginationService.getPageSlice(posts, currentPage),
     ),
   );
-
-  public currentPage$ = this.paginationService.currentPage$;
-
-  public totalPages$ = this.paginationService.totalPages$;
-
-  public nextPage() {
-    this.paginationService.nextPage();
-  }
-
-  public prevPage() {
-    this.paginationService.prevPage();
-  }
 }

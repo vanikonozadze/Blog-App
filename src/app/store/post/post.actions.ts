@@ -54,3 +54,13 @@ export const selectP = createAction(
   '[Post] Select Post',
   props<{ id: string | null }>(),
 );
+
+export const setPostFilterTitle = createAction(
+  '[Post Filter] Set Title',
+  props<{ title: string }>(),
+);
+
+export const setPostFilterDate = createAction(
+  '[Post Filter] Set Date',
+  props<{ date: string }>(),
+);

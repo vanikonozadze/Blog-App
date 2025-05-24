@@ -8,11 +8,9 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../../../store/app.state';
-import { selectP } from '../../../../store/post/post.actions';
-import { Observable } from 'rxjs';
-import { IPost } from '../../../../core/models/post.model';
-import { selectPostById } from '../../../../store/post/post.selectors';
+import { AppState } from '../../../../../store/app.state';
+import { selectP } from '../../../../../store/post/post.actions';
+import { selectPostById } from '../../../../../store/post/post.selectors';
 
 @Component({
   selector: 'app-post-details',

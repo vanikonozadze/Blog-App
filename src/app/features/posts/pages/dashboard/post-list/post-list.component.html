@@ -1,0 +1,7 @@
+<div class="post-list" *ngIf="paginatedPosts$ | async as paginatedPosts">
+  <div class="post-list-wrapper">
+    <app-card
+      *ngFor="let post of paginatedPosts"
+      [postData]="post"/>
+  </div>
+</div>

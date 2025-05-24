@@ -1,12 +1,76 @@
 {
   "posts": [
     {
-      "id": "555993976",
-      "title": "AAAAAAAAABBBBBBB",
-      "author": "AAAAAAAAA",
-      "date": "2025-05-01T00:00:00.000Z",
-      "description": "AAAAAAAAAAAAAAAAAA",
-      "content": "AAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      "id": "1",
+      "title": "Mastering Angular Signals",
+      "author": "Alice Johnson",
+      "date": "2024-03-15T09:30:00Z",
+      "description": "Explore the new reactive primitive in Angular.",
+      "content": "Angular Signals are a new way to manage state reactively. They offer fine-grained reactivity and can be used to simplify component logic..."
+    },
+    {
+      "id": "2",
+      "title": "Deploying Angular Apps with Firebase Hosting",
+      "author": "Mike Brown",
+      "date": "2024-02-22T14:15:00Z",
+      "description": "Step-by-step guide to deploying Angular apps on Firebase.",
+      "content": "Firebase Hosting provides a fast and secure way to deploy Angular applications. In this guide, we'll configure Firebase CLI and deploy a production build..."
+    },
+    {
+      "id": "3",
+      "title": "Understanding RxJS Operatorsfewfwef",
+      "author": "Sara Lee",
+      "date": "2024-04-10T11:00:00.000Z",
+      "description": "Learn how to use RxJS operators effectively.",
+      "content": "RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code..."
+    },
+    {
+      "id": "4",
+      "title": "State Management in Angular with NgRx",
+      "author": "Tom Harris",
+      "date": "2024-03-05T10:00:00Z",
+      "description": "An introduction to managing state in Angular applications using NgRx.",
+      "content": "NgRx provides powerful tools like reducers, effects, and selectors for scalable state management in Angular apps..."
+    },
+    {
+      "id": "6",
+      "title": "Angular Router Deep Dive",
+      "author": "Liam Nelson",
+      "date": "2024-03-25T15:00:00Z",
+      "description": "Learn advanced routing techniques in Angular.",
+      "content": "The Angular Router enables navigation between views. This guide covers lazy loading, route guards, and nested routes..."
+    },
+    {
+      "id": "7",
+      "title": "Building Progressive Web Apps with Angular",
+      "author": "Nina Patel",
+      "date": "2024-02-12T13:30:00Z",
+      "description": "How to create a PWA using Angular.",
+      "content": "PWAs combine the best of web and mobile apps. Angular makes it easy to add service workers and offline capabilities..."
+    },
+    {
+      "id": "8",
+      "title": "Reactive Forms vs Template-Driven Forms",
+      "author": "George Kim",
+      "date": "2024-01-29T10:30:00Z",
+      "description": "Compare two form handling approaches in Angular.",
+      "content": "Angular offers both reactive and template-driven forms. Understand their differences, pros, and cons to choose the right one for your project..."
+    },
+    {
+      "id": "9",
+      "title": "Optimizing Angular Performance",
+      "author": "Sophia Wright",
+      "date": "2024-04-01T12:00:00Z",
+      "description": "Tips to improve the performance of your Angular app.",
+      "content": "Performance optimization is key to user experience. Learn how to use ChangeDetectionStrategy, lazy loading, and trackBy functions..."
+    },
+    {
+      "id": "10",
+      "title": "Using Signals with ComponentStore",
+      "author": "James O’Connor",
+      "date": "2024-04-18T09:15:00Z",
+      "description": "Enhance Angular’s ComponentStore with signals.",
+      "content": "Combining signals with ComponentStore leads to cleaner and more efficient reactive state management within components..."
     }
   ]
 }

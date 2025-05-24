@@ -7,6 +7,8 @@ export interface PostState {
   loading: boolean;
   error: string | null;
   selectedPostId: string | number | null;
+  filterTitle: string;
+  filterDate: string;
 }
 
 const initialState: PostState = {
@@ -14,6 +16,8 @@ const initialState: PostState = {
   loading: false,
   error: null,
   selectedPostId: '',
+  filterTitle: '',
+  filterDate: '',
 };
 
 export const postReducer = createReducer(
@@ -45,5 +49,13 @@ export const postReducer = createReducer(
   on(PostActions.selectP, (state, { id }) => ({
     ...state,
     selectedPostId: id,
+  })),
+  on(PostActions.setPostFilterTitle, (state, { title }) => ({
+    ...state,
+    filterTitle: title,
+  })),
+  on(PostActions.setPostFilterDate, (state, { date }) => ({
+    ...state,
+    filterDate: date,
   })),
 );

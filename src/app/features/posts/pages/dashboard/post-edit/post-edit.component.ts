@@ -1,12 +1,12 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../../../store/app.state';
-import { IPost } from '../../../../core/models/post.model';
-import { updatePost } from '../../../../store/post/post.actions';
+import { AppState } from '../../../../../store/app.state';
+import { IPost } from '../../../../../core/models/post.model';
+import { updatePost } from '../../../../../store/post/post.actions';
 import { CommonModule, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PostService } from '../../../../core/services/post.service';
+import { PostService } from '../../../../../core/services/post.service';
 
 @Component({
   selector: 'app-post-edit',

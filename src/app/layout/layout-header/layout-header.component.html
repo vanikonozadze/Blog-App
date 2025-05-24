@@ -7,20 +7,9 @@
       <span class="material-symbols-outlined">Add Post</span>
     </button>
   </div>
-  <p>Blog App</p>
+  <h1>Angular Blog App</h1>
   <div class="theme-control">
-    @if (themeService.$themeSignal$() === 'dark') {
-      <button (click)="toggleTheme()">
-        <span class="material-symbols-outlined">
-          dark_mode
-        </span>
-      </button>
-    } @else {
-      <button (click)="toggleTheme()">
-        <span class="material-symbols-outlined">
-          wb_sunny
-        </span>
-      </button>
-    }
+    <p>Theme Toggle</p>
+    <mat-slide-toggle (click)="toggleTheme()"></mat-slide-toggle>
   </div>
 </div>
