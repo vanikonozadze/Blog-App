@@ -1,0 +1,14 @@
+<div class="filter" [ngClass]="themeService.$themeSignal$()">
+  <input
+    type="text"
+    placeholder="Search by title"
+    [(ngModel)]="titleFilter"
+    (ngModelChange)="onTitleChange(titleFilter)"
+  />
+
+  <input
+    type="date"
+    [(ngModel)]="dateFilter"
+    (ngModelChange)="onDateChange(dateFilter)"
+  />
+</div>
