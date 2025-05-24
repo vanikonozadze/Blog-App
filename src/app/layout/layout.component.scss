@@ -1,5 +1,9 @@
-.layout{
-  &-body{
-    height: 70vw;
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &-body {
+    flex: 1;
+    padding: 2rem;
   }
 }

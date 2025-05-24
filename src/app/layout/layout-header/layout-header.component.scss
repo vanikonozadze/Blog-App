@@ -10,7 +10,9 @@
   font-weight: 600;
   font-size: 1.1rem;
   user-select: none;
-
+  &-routing{
+    display: flex;
+  }
   button {
     background: transparent;
     border: none;

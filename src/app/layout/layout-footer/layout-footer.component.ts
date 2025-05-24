@@ -5,8 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './layout-footer.component.html',
   styleUrl: './layout-footer.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutFooterComponent {
-
-}
+export class LayoutFooterComponent {}

@@ -1,17 +1,26 @@
-<div class="layout-header">
-  <button [routerLink]="'/home'"><span class="material-symbols-outlined">
-    menu
-    </span></button>
-  <p>header works!</p>
+<div class="layout-header" [ngClass]="themeService.$themeSignal$()">
+  <div class="layout-header-routing">
+    <button [routerLink]="'/home'">
+      <span class="material-symbols-outlined">Home</span>
+    </button>
+    <button [routerLink]="'/home/add-post'">
+      <span class="material-symbols-outlined">Add Post</span>
+    </button>
+  </div>
+  <p>Blog App</p>
   <div class="theme-control">
     @if (themeService.$themeSignal$() === 'dark') {
-      <button (click)="toggleTheme()"><span class="material-symbols-outlined">
+      <button (click)="toggleTheme()">
+        <span class="material-symbols-outlined">
           dark_mode
-          </span></button>
+        </span>
+      </button>
     } @else {
-      <button (click)="toggleTheme()"><span class="material-symbols-outlined">
+      <button (click)="toggleTheme()">
+        <span class="material-symbols-outlined">
           wb_sunny
-          </span></button>
+        </span>
+      </button>
     }
   </div>
 </div>

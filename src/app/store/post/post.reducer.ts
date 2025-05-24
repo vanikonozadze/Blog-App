@@ -1,19 +1,19 @@
 import { createReducer, on } from '@ngrx/store';
 import * as PostActions from './post.actions';
-import {IPost} from '../../core/models/post.model';
+import { IPost } from '../../core/models/post.model';
 
 export interface PostState {
   data: IPost[];
   loading: boolean;
   error: string | null;
-  selectedPostId: number | null;
+  selectedPostId: string | number | null;
 }
 
 const initialState: PostState = {
   data: [],
   loading: false,
   error: null,
-  selectedPostId: null
+  selectedPostId: '',
 };
 
 export const postReducer = createReducer(
@@ -44,7 +44,6 @@ export const postReducer = createReducer(
   })),
   on(PostActions.selectP, (state, { id }) => ({
     ...state,
-    selectedPostId: id
-  }))
+    selectedPostId: id,
+  })),
 );
-

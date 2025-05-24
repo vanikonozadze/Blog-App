@@ -1,33 +1,51 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
-import {PostCardComponent} from '../../components/post-card/post-card.component';
-import {AsyncPipe, NgIf} from '@angular/common';
-import {Store} from '@ngrx/store';
-import {selectPosts} from '../../../../store/post/post.selectors';
-import {AppState} from '../../../../store/app.state';
-import {loadPosts, loadPostsSuccess} from '../../../../store/post/post.actions';
-import {Observable} from 'rxjs';
-import {IPost} from '../../../../core/models/post.model';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { PostCardComponent } from '../../components/post-card/post-card.component';
+import { AsyncPipe, NgIf, NgForOf } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { selectPosts } from '../../../../store/post/post.selectors';
+import { AppState } from '../../../../store/app.state';
+import { loadPosts } from '../../../../store/post/post.actions';
+import { combineLatest, map, tap } from 'rxjs';
+import { PaginationService } from '../../../../core/services/pagination.service';
+
 @Component({
   selector: 'app-post-list',
-  imports: [
-    PostCardComponent,
-    NgIf,
-    AsyncPipe,
-  ],
+  standalone: true,
+  imports: [PostCardComponent, NgIf, AsyncPipe, NgForOf],
   templateUrl: './post-list.component.html',
-  styleUrl: './post-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./post-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PostListComponent implements OnInit {
+export class PostListComponent {
   private store = inject(Store<AppState>);
-  public posts$!: Observable<IPost[]>;
+  private paginationService = inject(PaginationService);
 
-  ngOnInit(){
-    this.getAllPosts();
+  constructor() {
+    this.store.dispatch(loadPosts());
   }
 
-  private getAllPosts(): void{
-    this.store.dispatch(loadPosts());
-    this.posts$ = this.store.select(selectPosts)
+  posts$ = this.store
+    .select(selectPosts)
+    .pipe(tap((posts) => this.paginationService.setTotalItems(posts.length)));
+
+  paginatedPosts$ = combineLatest([
+    this.posts$,
+    this.paginationService.currentPage$,
+  ]).pipe(
+    map(([posts, currentPage]) =>
+      this.paginationService.getPageSlice(posts, currentPage),
+    ),
+  );
+
+  public currentPage$ = this.paginationService.currentPage$;
+
+  public totalPages$ = this.paginationService.totalPages$;
+
+  public nextPage() {
+    this.paginationService.nextPage();
+  }
+
+  public prevPage() {
+    this.paginationService.prevPage();
   }
 }
