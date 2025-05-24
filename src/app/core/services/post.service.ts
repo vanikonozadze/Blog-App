@@ -23,8 +23,8 @@ export class PostService {
     return this.http.post<IPost>(this.BASE_URL, post);
   }
 
-  updatePost$(id: number, post: IPost): Observable<IPost> {
-    return this.http.put<IPost>(`${this.BASE_URL}/${id}`, post);
+  updatePost$(post: IPost): Observable<IPost> {
+    return this.http.put<IPost>(`${this.BASE_URL}/${post.id}`, post);
   }
 
   deletePost$(id: number): Observable<void> {

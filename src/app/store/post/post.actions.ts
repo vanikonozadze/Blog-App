@@ -1,8 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import {IPost} from '../../core/models/post.model';
 
-export const selectPost = createAction('[Post] Select Post', props<{ id: number }>());
-
 export const loadPosts = createAction('[Post] Load Posts');
 export const loadPostsSuccess = createAction('[Post] Load Posts Success', props<{ posts: IPost[] }>());
 export const loadPostsFailure = createAction('[Post] Load Posts Failure', props<{ error: string }>());
@@ -18,3 +16,6 @@ export const addPostFailure = createAction('[Post] Add Post Failure', props<{ er
 export const updatePost = createAction('[Post] Update Post', props<{ post: IPost }>());
 export const updatePostSuccess = createAction('[Post] Update Post Success', props<{ post: IPost }>());
 export const updatePostFailure = createAction('[Post] Update Post Failure', props<{ error: string }>());
+
+
+export const selectP = createAction('[Post] Select Post', props<{ id: number }>());

@@ -1,7 +1,13 @@
-import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {AsyncPipe, DatePipe, NgIf} from '@angular/common';
-import {PostService} from '../../../../core/services/post.service';
+import {Store} from '@ngrx/store';
+import {AppState} from '../../../../store/app.state';
+import {selectP} from '../../../../store/post/post.actions';
+import {Observable, tap} from 'rxjs';
+import {IPost} from '../../../../core/models/post.model';
+import {selectPost, selectPostById} from '../../../../store/post/post.selectors';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-post-details',
@@ -15,11 +21,21 @@ import {PostService} from '../../../../core/services/post.service';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PostDetailsComponent {
+export class PostDetailsComponent implements OnInit {
+  private store = inject(Store<AppState>);
   private route = inject(ActivatedRoute);
-  private postService = inject(PostService);
+
+  public post$!: Observable<IPost | undefined>
 
   private $postId$ = signal(Number(this.route.snapshot.paramMap.get('id')));
 
-  public post$ = this.postService.getPost$(this.$postId$());
+  ngOnInit(): void {
+    const id = this.$postId$();
+    this.store.dispatch(selectP({ id }));
+    this.post$ = this.store.select(selectPost).pipe(
+      switchMap(post => {
+        return post;
+      })
+    );
+  }
 }

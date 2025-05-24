@@ -18,10 +18,6 @@ const initialState: PostState = {
 
 export const postReducer = createReducer(
   initialState,
-  on(PostActions.selectPost, (state, { id }) => ({
-    ...state,
-    selectedPostId: id
-  })),
   on(PostActions.loadPosts, (state) => ({ ...state, loading: true })),
   on(PostActions.loadPostsSuccess, (state, { posts }) => ({
     ...state,
@@ -45,6 +41,10 @@ export const postReducer = createReducer(
   on(PostActions.updatePostSuccess, (state, { post }) => ({
     ...state,
     data: state.data.map((p) => (p.id === post.id ? post : p)),
+  })),
+  on(PostActions.selectP, (state, { id }) => ({
+    ...state,
+    selectedPostId: id
   }))
 );
 

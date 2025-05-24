@@ -55,18 +55,7 @@ export class PostEditComponent implements OnInit {
       date: new Date(this.$post$().date).toISOString(),
     };
 
-    this.postService.updatePost$(this.postId, updatedPost).pipe(
-      switchMap(() => this.postService.getPosts$()),
-      tap(posts => this.store.dispatch(loadPostsSuccess({ posts }))),
-      catchError(error => {
-        console.error('Failed to edit the post', error);
-        return of(null);
-      })
-    ).subscribe(posts => {
-      if (posts) {
-        this.store.dispatch(updatePost({ post: updatedPost }));
-      }
-      this.router.navigate(['/home/posts']);
-    });
+    this.store.dispatch(updatePost({ post: updatedPost }))
+    this.router.navigate(['/home/posts']);
   }
 }
