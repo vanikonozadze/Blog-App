@@ -1,14 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../../store/app.state';
-import { PaginationService } from '../../../../core/services/pagination.service';
 import {
   loadPosts,
-  setPostFilterDate,
   setPostFilterTitle,
+  sortPostsByDate,
 } from '../../../../store/post/post.actions';
-import { selectFilteredPosts } from '../../../../store/post/post.selectors';
-import { tap } from 'rxjs';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThemeService } from '../../../../core/services/theme.service';
 import { NgClass } from '@angular/common';
@@ -25,7 +22,6 @@ export class FilterComponent {
   public readonly themeService = inject(ThemeService);
 
   public titleFilter: string = '';
-  public dateFilter: string = '';
 
   constructor() {
     this.store.dispatch(loadPosts());
@@ -35,7 +31,11 @@ export class FilterComponent {
     this.store.dispatch(setPostFilterTitle({ title }));
   }
 
-  onDateChange(date: string) {
-    this.store.dispatch(setPostFilterDate({ date }));
+  public sortAsc() {
+    this.store.dispatch(sortPostsByDate({ direction: 'asc' }));
+  }
+
+  public sortDesc() {
+    this.store.dispatch(sortPostsByDate({ direction: 'desc' }));
   }
 }

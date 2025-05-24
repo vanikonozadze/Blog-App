@@ -17,24 +17,17 @@ export const selectPostById = (id: string | null) =>
     return state.data.find((post) => post.id === id);
   });
 
-export const selectPostFilters = createSelector(selectPostState, (state) => ({
-  title: state.filterTitle,
-  date: state.filterDate,
-}));
+export const selectPostFilter = createSelector(
+  selectPostState,
+  (state: PostState) => state.filter,
+);
 
 export const selectFilteredPosts = createSelector(
-  selectPosts,
-  selectPostFilters,
-  (posts, filters) => {
-    return posts.filter((post) => {
-      const matchesTitle =
-        filters.title === '' ||
-        post.title.toLowerCase().includes(filters.title.toLowerCase());
-
-      const matchesDate =
-        filters.date === '' || post.date.startsWith(filters.date);
-
-      return matchesTitle && matchesDate;
-    });
+  selectPostState,
+  (state: PostState) => {
+    const title = state.filter.title.toLowerCase();
+    return state.data.filter((post) =>
+      post.title.toLowerCase().includes(title),
+    );
   },
 );

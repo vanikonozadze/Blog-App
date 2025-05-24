@@ -2,13 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../../store/app.state';
 import { PaginationService } from '../../../../core/services/pagination.service';
-import {
-  loadPosts,
-  setPostFilterDate,
-  setPostFilterTitle,
-} from '../../../../store/post/post.actions';
-import { selectFilteredPosts } from '../../../../store/post/post.selectors';
-import { combineLatest, map, tap } from 'rxjs';
+import { loadPosts } from '../../../../store/post/post.actions';
 import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({

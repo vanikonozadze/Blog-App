@@ -6,9 +6,6 @@
     (ngModelChange)="onTitleChange(titleFilter)"
   />
 
-  <input
-    type="date"
-    [(ngModel)]="dateFilter"
-    (ngModelChange)="onDateChange(dateFilter)"
-  />
+  <button (click)="sortAsc()">Sort Asc</button>
+  <button (click)="sortDesc()">Sort Desc</button>
 </div>

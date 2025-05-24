@@ -3,17 +3,11 @@ import { AsyncPipe, NgIf, NgForOf } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { selectFilteredPosts } from '../../../../../store/post/post.selectors';
 import { AppState } from '../../../../../store/app.state';
-import {
-  loadPosts,
-  setPostFilterDate,
-  setPostFilterTitle,
-} from '../../../../../store/post/post.actions';
+import { loadPosts } from '../../../../../store/post/post.actions';
 import { combineLatest, map, tap } from 'rxjs';
 import { PaginationService } from '../../../../../core/services/pagination.service';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from '../../../components/card/card.component';
-import { PaginationComponent } from '../../../components/pagination/pagination.component';
-import { FilterComponent } from '../../../components/filter/filter.component';
 
 @Component({
   selector: 'app-post-list',

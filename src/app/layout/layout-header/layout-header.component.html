@@ -8,8 +8,13 @@
     </button>
   </div>
   <h1>Angular Blog App</h1>
-  <div class="theme-control">
-    <p>Theme Toggle</p>
-    <mat-slide-toggle (click)="toggleTheme()"></mat-slide-toggle>
+  <div class="layout-header-routing">
+    <div class="theme-control">
+      <p>Theme Toggle</p>
+      <mat-slide-toggle (click)="toggleTheme()"></mat-slide-toggle>
+    </div>
+    <button>
+      <span class="material-symbols-outlined" (click)="logout()">Log Out</span>
+    </button>
   </div>
 </div>

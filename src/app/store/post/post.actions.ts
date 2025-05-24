@@ -6,6 +6,7 @@ export const loadPostsSuccess = createAction(
   '[Post] Load Posts Success',
   props<{ posts: IPost[] }>(),
 );
+
 export const loadPostsFailure = createAction(
   '[Post] Load Posts Failure',
   props<{ error: string }>(),
@@ -60,7 +61,7 @@ export const setPostFilterTitle = createAction(
   props<{ title: string }>(),
 );
 
-export const setPostFilterDate = createAction(
-  '[Post Filter] Set Date',
-  props<{ date: string }>(),
+export const sortPostsByDate = createAction(
+  '[Post] Sort Posts By Date',
+  props<{ direction: 'asc' | 'desc' }>(),
 );

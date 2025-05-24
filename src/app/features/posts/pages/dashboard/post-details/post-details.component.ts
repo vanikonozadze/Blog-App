@@ -1,16 +1,7 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
-import { Store } from '@ngrx/store';
-import { AppState } from '../../../../../store/app.state';
-import { selectP } from '../../../../../store/post/post.actions';
-import { selectPostById } from '../../../../../store/post/post.selectors';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-post-details',
@@ -19,20 +10,7 @@ import { selectPostById } from '../../../../../store/post/post.selectors';
   imports: [NgIf, AsyncPipe, DatePipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PostDetailsComponent implements OnInit {
-  private store = inject(Store<AppState>);
+export class PostDetailsComponent {
   private route = inject(ActivatedRoute);
-
-  private $postId$ = signal(this.route.snapshot.paramMap.get('id'));
-
-  public post$ = this.store.select(selectPostById(this.$postId$()));
-
-  ngOnInit(): void {
-    this.getSelectedPost();
-  }
-
-  private getSelectedPost() {
-    const id = this.$postId$();
-    this.store.dispatch(selectP({ id }));
-  }
+  public post$ = this.route.data.pipe(map((data) => data['client']));
 }
