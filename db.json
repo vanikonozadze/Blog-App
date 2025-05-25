@@ -1,14 +1,6 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "Mastering Angular Signals",
-      "author": "Alice Johnson",
-      "date": "2024-03-15T09:30:00Z",
-      "description": "Explore the new reactive primitive in Angular.",
-      "content": "Angular Signals are a new way to manage state reactively..."
-    },
-    {
       "id": "2",
       "title": "Deploying Angular Apps with Firebase Hosting",
       "author": "Mike Brown",

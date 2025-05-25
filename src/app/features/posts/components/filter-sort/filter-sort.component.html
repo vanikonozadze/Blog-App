@@ -1,11 +1,11 @@
-<div class="filter" [ngClass]="themeService.$themeSignal$()">
+<div class="filter-sort" [ngClass]="themeService.$themeSignal$()">
   <input
     type="text"
     placeholder="Search by title"
     [(ngModel)]="titleFilter"
     (ngModelChange)="onTitleChange(titleFilter)"
   />
-
+  <!---->
   <button (click)="sortAsc()">Sort Asc</button>
   <button (click)="sortDesc()">Sort Desc</button>
 </div>

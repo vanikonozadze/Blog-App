@@ -1,0 +1,9 @@
+<div class="post-action">
+  <h1>{{ actionType }}</h1>
+  <!---->
+  @if(actionType === 'edit'){
+    <app-action [actionType]="actionType" [postData]="post$ | async"/>
+  } @else {
+    <app-action [actionType]="actionType"/>
+  }
+</div>

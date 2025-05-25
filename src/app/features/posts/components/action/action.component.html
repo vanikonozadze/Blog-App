@@ -1,5 +1,5 @@
-<div class="post-add">
-  <form [formGroup]="postForm" (ngSubmit)="AddPost()">
+<div class="action">
+  <form [formGroup]="postForm" (ngSubmit)="submitAction()">
     <div class="form-group">
       <label>Title</label>
       <input placeholder="title" type="text" formControlName="title" />

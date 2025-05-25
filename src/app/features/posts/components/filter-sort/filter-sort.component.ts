@@ -1,23 +1,23 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../../store/app.state';
+import { ThemeService } from '../../../../core/services/theme.service';
 import {
   loadPosts,
   setPostFilterTitle,
   sortPostsByDate,
 } from '../../../../store/post/post.actions';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ThemeService } from '../../../../core/services/theme.service';
 import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-filter',
+  selector: 'app-filter-sort',
   imports: [ReactiveFormsModule, FormsModule, NgClass],
-  templateUrl: './filter.component.html',
-  styleUrl: './filter.component.scss',
+  templateUrl: './filter-sort.component.html',
+  styleUrl: './filter-sort.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FilterComponent {
+export class FilterSortComponent {
   private store = inject(Store<AppState>);
   public readonly themeService = inject(ThemeService);
 
@@ -27,7 +27,7 @@ export class FilterComponent {
     this.store.dispatch(loadPosts());
   }
 
-  onTitleChange(title: string) {
+  public onTitleChange(title: string) {
     this.store.dispatch(setPostFilterTitle({ title }));
   }
 

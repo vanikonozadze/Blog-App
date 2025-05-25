@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostEditComponent } from './post-edit.component';
+import { FilterSortComponent } from './filter-sort.component';
 
-describe('PostEditComponent', () => {
-  let component: PostEditComponent;
-  let fixture: ComponentFixture<PostEditComponent>;
+describe('FilterSortComponent', () => {
+  let component: FilterSortComponent;
+  let fixture: ComponentFixture<FilterSortComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PostEditComponent]
+      imports: [FilterSortComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PostEditComponent);
+    fixture = TestBed.createComponent(FilterSortComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

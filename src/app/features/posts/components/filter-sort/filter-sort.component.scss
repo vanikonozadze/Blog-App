@@ -1,4 +1,4 @@
-.filter {
+.filter-sort {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -11,9 +11,14 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     outline: none;
+    color: #1adc00;
     &:focus {
       border-color: #1adc00;
       box-shadow: 0 0 0 2px rgba(26, 220, 0, 0.3);
     }
+  }
+  button{
+    border-radius: 20px;
+    padding: 1rem;
   }
 }

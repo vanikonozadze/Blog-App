@@ -27,11 +27,11 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'home/add-post',
+        path: 'home/add-post/:actionType',
         loadComponent: () =>
           import(
-            './features/posts/pages/dashboard/post-add/post-add.component'
-          ).then((c) => c.PostAddComponent),
+            './features/posts/pages/dashboard/post-action/post-action.component'
+          ).then((c) => c.PostActionComponent),
       },
       {
         path: 'home/posts/:id',
@@ -44,11 +44,14 @@ export const routes: Routes = [
         },
       },
       {
-        path: 'home/posts/edit/:id',
+        path: 'home/posts/edit/:actionType/:id',
         loadComponent: () =>
           import(
-            './features/posts/pages/dashboard/post-edit/post-edit.component'
-          ).then((c) => c.PostEditComponent),
+            './features/posts/pages/dashboard/post-action/post-action.component'
+          ).then((c) => c.PostActionComponent),
+        resolve: {
+          client: postResolver,
+        },
       },
     ],
   },
