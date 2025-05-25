@@ -15,6 +15,7 @@ import { AsyncPipe, NgIf } from '@angular/common';
 export class PaginationComponent {
   private store = inject(Store<AppState>);
   private paginationService = inject(PaginationService);
+
   constructor() {
     this.store.dispatch(loadPosts());
   }

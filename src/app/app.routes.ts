@@ -27,7 +27,7 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'home/add-post/:actionType',
+        path: 'home/:actionType',
         loadComponent: () =>
           import(
             './features/posts/pages/dashboard/post-action/post-action.component'
@@ -44,7 +44,7 @@ export const routes: Routes = [
         },
       },
       {
-        path: 'home/posts/edit/:actionType/:id',
+        path: 'home/posts/:actionType/:id',
         loadComponent: () =>
           import(
             './features/posts/pages/dashboard/post-action/post-action.component'

@@ -1,5 +1,5 @@
 <div class="post-action">
-  <h1>{{ actionType }}</h1>
+  <h1>{{ actionType | uppercase }} POST</h1>
   <!---->
   @if(actionType === 'edit'){
     <app-action [actionType]="actionType" [postData]="post$ | async"/>

@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import { AsyncPipe, NgIf, NgForOf } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { selectFilteredPosts } from '../../../../../store/post/post.selectors';
@@ -21,13 +26,18 @@ export class PostListComponent {
   private store = inject(Store<AppState>);
   private paginationService = inject(PaginationService);
 
+  public $postsAvailable$ = signal<boolean>(false);
+
   constructor() {
     this.store.dispatch(loadPosts());
   }
 
-  posts$ = this.store
-    .select(selectFilteredPosts)
-    .pipe(tap((posts) => this.paginationService.setTotalItems(posts.length)));
+  posts$ = this.store.select(selectFilteredPosts).pipe(
+    tap((posts) => {
+      this.paginationService.setTotalItems(posts.length);
+      this.$postsAvailable$.set(!!posts.length);
+    }),
+  );
 
   paginatedPosts$ = combineLatest([
     this.posts$,

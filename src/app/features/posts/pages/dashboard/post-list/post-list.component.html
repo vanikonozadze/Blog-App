@@ -1,7 +1,12 @@
-<div class="post-list" *ngIf="paginatedPosts$ | async as paginatedPosts">
+<div class="post-list" *ngIf="{paginatedPosts: paginatedPosts$ | async} as params">
   <div class="post-list-wrapper">
-    <app-card
-      *ngFor="let post of paginatedPosts"
-      [postData]="post"/>
+    @if ($postsAvailable$()) {
+      <app-card
+        *ngFor="let post of params?.paginatedPosts"
+        [postData]="post">
+      </app-card>
+    } @else {
+      <h1>NO POSTS FOUND</h1>
+    }
   </div>
 </div>

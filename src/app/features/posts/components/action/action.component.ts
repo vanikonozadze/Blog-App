@@ -18,7 +18,7 @@ import { selectPosts } from '../../../../store/post/post.selectors';
 import { take } from 'rxjs/operators';
 import { IPost } from '../../../../core/models/post.model';
 import { addPost, updatePost } from '../../../../store/post/post.actions';
-import { generateUniqueId, getFormErrors } from './helper/action.functions';
+import { generateUniqueId } from './helper/action.functions';
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -106,13 +106,7 @@ export class ActionComponent implements OnInit {
         };
         this.store.dispatch(addPost({ post: _post }));
       }
-
-      setTimeout(() => {
-        this.router.navigate(['/home/posts']);
-      }, 100);
-    } else {
-      const errors = getFormErrors(this.postForm);
-      alert(`Please correct the following errors:\n\n${errors.join('\n')}`);
+      this.router.navigate(['/home']);
     }
   }
 }

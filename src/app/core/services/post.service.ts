@@ -11,10 +11,6 @@ export class PostService {
   private http = inject(HttpClient);
   private readonly BASE_URL = `${environment.apiUrl}/posts`;
 
-  public getPost$(id: string): Observable<IPost> {
-    return this.http.get<IPost>(`${this.BASE_URL}/${id}`);
-  }
-
   public getPosts$(): Observable<IPost[]> {
     return this.http.get<IPost[]>(this.BASE_URL);
   }

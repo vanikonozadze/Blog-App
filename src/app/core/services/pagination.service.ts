@@ -9,13 +9,13 @@ export class PaginationService {
   private totalItemsSubject = new BehaviorSubject<number>(0);
   totalItems$ = this.totalItemsSubject.asObservable();
 
-  pageSize = 6;
+  private pageSize = 6;
 
-  totalPages$: Observable<number> = this.totalItems$.pipe(
+  public totalPages$: Observable<number> = this.totalItems$.pipe(
     map((total) => Math.ceil(total / this.pageSize)),
   );
 
-  setTotalItems(total: number) {
+  public setTotalItems(total: number) {
     this.totalItemsSubject.next(total);
     if (this.currentPageSubject.value > this.totalPages) {
       this.currentPageSubject.next(1);
@@ -30,7 +30,7 @@ export class PaginationService {
     return this.currentPageSubject.value;
   }
 
-  getPageSlice<T>(
+  public getPageSlice<T>(
     items: T[],
     page: number = this.currentPage,
     pageSize: number = this.pageSize,
@@ -39,13 +39,13 @@ export class PaginationService {
     return items.slice(start, start + pageSize);
   }
 
-  nextPage() {
+  public nextPage() {
     if (this.currentPage < this.totalPages) {
       this.currentPageSubject.next(this.currentPage + 1);
     }
   }
 
-  prevPage() {
+  public prevPage() {
     if (this.currentPage > 1) {
       this.currentPageSubject.next(this.currentPage - 1);
     }

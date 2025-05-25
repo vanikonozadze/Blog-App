@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActionComponent } from '../../../components/action/action.component';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, UpperCasePipe } from '@angular/common';
 import { IPost } from '../../../../../core/models/post.model';
 
 @Component({
   selector: 'app-post-action',
-  imports: [ActionComponent, AsyncPipe],
+  imports: [ActionComponent, AsyncPipe, UpperCasePipe],
   templateUrl: './post-action.component.html',
   styleUrl: './post-action.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
