@@ -31,6 +31,38 @@
       "date": "2024-04-14",
       "description": "Explore the power of Subjects and BehaviorSubjects in RxJS for multicasting and state management within Angular.",
       "content": "Subjects in RxJS act as both an Observable and Observer, allowing you to multicast values to multiple subscribers. This article dives into the differences between Subject, BehaviorSubject, ReplaySubject, and AsyncSubject. We provide examples of how to use BehaviorSubject to maintain and share application state reactively. Learn how these constructs simplify communication between Angular components and services, enabling more modular and maintainable code."
+    },
+    {
+      "id": "9",
+      "title": "Combining Streams in RxJS",
+      "author": "Sara Lee",
+      "date": "2024-04-16",
+      "description": "Learn how to merge and combine multiple Observables in RxJS to build more dynamic and reactive Angular applications.",
+      "content": "Combining streams is a fundamental concept in RxJS that enables you to work with multiple data sources simultaneously. In this article, we explore operators like combineLatest, withLatestFrom, forkJoin, and zip. You'll see how to coordinate multiple asynchronous actions, such as parallel API calls, dependent requests, and reactive form behaviors. The examples are tailored to Angular and include real-world usage scenarios with services and components."
+    },
+    {
+      "id": "10",
+      "title": "State Management with RxJS",
+      "author": "Sara Lee",
+      "date": "2024-04-17",
+      "description": "Discover how RxJS can be used to manage application state in Angular without external libraries like NgRx.",
+      "content": "State management doesn't always require a full library. This article shows how to use RxJS and BehaviorSubjects to maintain and update application state in a reactive way. We cover creating a simple store, updating state immutably, and subscribing to state changes in components. You'll learn about using scan, tap, and distinctUntilChanged to reduce unnecessary renders and improve performance in Angular apps."
+    },
+    {
+      "id": "11",
+      "title": "RxJS and Angular Change Detection",
+      "author": "Sara Lee",
+      "date": "2024-04-18",
+      "description": "Understand how RxJS affects Angular's change detection and how to optimize performance using the OnPush strategy.",
+      "content": "Angular's change detection can be optimized significantly with RxJS. In this article, we examine how Observables interact with Angular’s component rendering and how to leverage the OnPush change detection strategy. You'll learn how to use async pipes effectively, avoid unnecessary subscriptions, and improve performance in large applications. We also discuss common pitfalls and best practices for keeping your Angular UI responsive and efficient."
+    },
+    {
+      "id": "631880597",
+      "title": "AAAAAAAAAAAAAAA",
+      "author": "AAAAAAAAAAAAAAA",
+      "date": "2025-05-08",
+      "description": "AAAAAAAAAAAAAAA",
+      "content": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     }
   ]
 }
