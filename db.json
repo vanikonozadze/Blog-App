@@ -63,6 +63,14 @@
       "date": "2024-04-17T18:00:00Z",
       "description": "Identify and avoid memory leaks in RxJS to ensure your Angular applications run smoothly and efficiently.",
       "content": "Memory leaks in Angular apps often arise from improper subscription management in RxJS streams. This article explains how leaks happen and provides strategies to prevent them, including using the async pipe, takeUntil operator, and manual unsubscription. We also cover tools and techniques for detecting memory leaks during development and production. Keeping your app leak-free is key to maintaining performance and stability."
+    },
+    {
+      "id": "644901468",
+      "title": "fsdfgw",
+      "author": "534534",
+      "date": "2025-05-10",
+      "description": "345345345345",
+      "content": "3534534345345345345345"
     }
   ]
 }

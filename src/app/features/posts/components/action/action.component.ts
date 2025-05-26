@@ -18,7 +18,10 @@ import { selectPosts } from '../../../../store/post/post.selectors';
 import { take } from 'rxjs/operators';
 import { IPost } from '../../../../core/models/post.model';
 import { addPost, updatePost } from '../../../../store/post/post.actions';
-import { generateUniqueId } from './helper/action.functions';
+import {
+  formatDateForInput,
+  generateUniqueId,
+} from './helper/action.functions';
 import { InputComponent } from './input/input.component';
 
 @Component({
@@ -44,6 +47,7 @@ export class ActionComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(100),
+      Validators.pattern(/^[A-Za-z\s]+$/),
     ]),
     author: new FormControl('', [
       Validators.required,
@@ -63,11 +67,13 @@ export class ActionComponent implements OnInit {
 
   ngOnInit() {
     if (this.actionType === 'edit' && this.postData) {
+      const formattedDate = formatDateForInput(this.postData.date);
+
       this.postForm.setValue({
         id: this.postData.id,
         title: this.postData.title,
         author: this.postData.author,
-        date: this.postData.date,
+        date: formattedDate,
         description: this.postData.description,
         content: this.postData.content,
       });

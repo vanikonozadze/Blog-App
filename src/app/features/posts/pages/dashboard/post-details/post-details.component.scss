@@ -30,12 +30,6 @@
       span {
         font-weight: 500;
         margin-right: 0.75rem;
-
-        &:not(:last-child)::after {
-          content: '•';
-          margin-left: 0.75rem;
-          color: #aaa;
-        }
       }
     }
 
