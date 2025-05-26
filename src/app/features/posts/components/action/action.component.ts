@@ -8,6 +8,7 @@ import {
 import {
   FormControl,
   FormGroup,
+  isFormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -19,11 +20,11 @@ import { take } from 'rxjs/operators';
 import { IPost } from '../../../../core/models/post.model';
 import { addPost, updatePost } from '../../../../store/post/post.actions';
 import { generateUniqueId } from './helper/action.functions';
-import { NgIf } from '@angular/common';
+import { InputComponent } from './input/input.component';
 
 @Component({
   selector: 'app-action',
-  imports: [ReactiveFormsModule, RouterLink, NgIf],
+  imports: [ReactiveFormsModule, RouterLink, InputComponent],
   templateUrl: './action.component.html',
   styleUrl: './action.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -109,4 +110,6 @@ export class ActionComponent implements OnInit {
       this.router.navigate(['/home']);
     }
   }
+
+  protected readonly isFormGroup = isFormGroup;
 }

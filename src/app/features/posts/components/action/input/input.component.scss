@@ -1,0 +1,22 @@
+.form-input {
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #000;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+  }
+}

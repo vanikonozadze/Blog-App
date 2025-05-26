@@ -1,49 +1,23 @@
 <div class="action">
   <form [formGroup]="postForm" (ngSubmit)="submitAction()">
     <div class="form-group">
-      <label>Title</label>
-      <input placeholder="title" type="text" formControlName="title" />
-      <div *ngIf="postForm.get('title')?.invalid && (postForm.get('title')?.touched || postForm.get('title')?.dirty)" class="error">
-        <div *ngIf="postForm.get('title')?.errors?.['required']">Title is required.</div>
-        <div *ngIf="postForm.get('title')?.errors?.['minlength']">Title must be at least 3 characters.</div>
-        <div *ngIf="postForm.get('title')?.errors?.['maxlength']">Title must be less than 100 characters.</div>
-      </div>
+      <app-input label="Title" formControlName="title" type="text"/>
     </div>
     <!---->
     <div class="form-group">
-      <label>Author</label>
-      <input placeholder="author" type="text" formControlName="author" />
-      <div *ngIf="postForm.get('author')?.invalid && (postForm.get('author')?.touched || postForm.get('author')?.dirty)" class="error">
-        <div *ngIf="postForm.get('author')?.errors?.['required']">Author is required.</div>
-        <div *ngIf="postForm.get('author')?.errors?.['minlength']">Author must be at least 2 characters.</div>
-        <div *ngIf="postForm.get('author')?.errors?.['maxlength']">Author must be less than 50 characters.</div>
-      </div>
+      <app-input label="Author" formControlName="author" type="text"/>
     </div>
     <!---->
     <div class="form-group">
-      <label>Date</label>
-      <input placeholder="date" type="date" formControlName="date" />
-      <div *ngIf="postForm.get('date')?.invalid && (postForm.get('date')?.touched || postForm.get('date')?.dirty)" class="error">
-        <div *ngIf="postForm.get('date')?.errors?.['required']">Date is required.</div>
-      </div>
+      <app-input label="Date" formControlName="date" type="date"/>
     </div>
     <!---->
     <div class="form-group">
-      <label>Description</label>
-      <input placeholder="description" type="text" formControlName="description" />
-      <div *ngIf="postForm.get('description')?.invalid && (postForm.get('description')?.touched || postForm.get('description')?.dirty)" class="error">
-        <div *ngIf="postForm.get('description')?.errors?.['required']">Description is required.</div>
-        <div *ngIf="postForm.get('description')?.errors?.['minlength']">Description must be at least 10 characters.</div>
-      </div>
+      <app-input label="Description" formControlName="description" type="text"/>
     </div>
     <!---->
     <div class="form-group">
-      <label>Content</label>
-      <input placeholder="content" type="text" formControlName="content" />
-      <div *ngIf="postForm.get('content')?.invalid && (postForm.get('content')?.touched || postForm.get('content')?.dirty)" class="error">
-        <div *ngIf="postForm.get('content')?.errors?.['required']">Content is required.</div>
-        <div *ngIf="postForm.get('content')?.errors?.['minlength']">Content must be at least 20 characters.</div>
-      </div>
+      <app-input label="Content" formControlName="content" type="text"/>
     </div>
     <!---->
     <button type="submit" class="btn-primary" [disabled]="postForm.invalid">Save</button>

@@ -2,19 +2,11 @@
   "posts": [
     {
       "id": "2",
-      "title": "Deploying Angular Apps with Firebase Hosting",
+      "title": "Deploying Angular Apps with Firebase Hostingerg",
       "author": "Mike Brown",
       "date": "2024-02-22T14:15:00Z",
       "description": "Step-by-step guide to deploying Angular apps on Firebase.",
       "content": "Firebase Hosting provides a fast and secure way..."
-    },
-    {
-      "id": "4",
-      "title": "Understanding RxJS Operators - Part 2",
-      "author": "Sara Lee",
-      "date": "2024-04-11T12:00:00Z",
-      "description": "Deeper into RxJS.",
-      "content": "Advanced operators in RxJS explained..."
     },
     {
       "id": "5",
