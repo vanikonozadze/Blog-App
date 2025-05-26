@@ -1,7 +1,7 @@
 <div class="post-card" [ngClass]="themeService.$themeSignal$()">
-  <div class="post-card-header">
-    <h3 class="post-card-title">{{ postData.title }}</h3>
-    <p class="post-card-subtitle">{{ postData.date | date: 'mediumDate' }}</p>
+  <div class="post-card__header">
+    <h3 class="post-card__header-title">{{ postData.title }}</h3>
+    <p class="post-card__header-subtitle">By <strong>{{ postData.author }}</strong> — {{ postData.date | date: 'mediumDate' }}</p>
   </div>
   <!---->
   <div class="post-card-content">

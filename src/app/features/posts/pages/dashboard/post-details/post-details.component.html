@@ -1,14 +1,14 @@
 <div class="post-details" *ngIf="{post: post$ | async} as params">
-  <div class="post-header">
-    <h1 class="post-title">{{ params.post?.title }}</h1>
-    <div class="post-meta">
-      <span class="post-author">by {{ params.post?.author }}</span>
-      <span class="post-date">• {{ params.post?.date | date: 'mediumDate' }}</span>
+  <div class="post-details__header">
+    <h1 class="post-details__header-title">{{ params.post?.title }}</h1>
+    <div class="post-details__header-meta">
+      <span>by {{ params.post?.author }}</span>
+      <span>• {{ params.post?.date | date: 'mediumDate' }}</span>
     </div>
-    <p class="post-description">{{ params.post?.description }}</p>
+    <p class="post-details__header-description">{{ params.post?.description }}</p>
   </div>
   <!---->
-  <div class="post-content">
+  <div class="post-details__content">
     <p>{{ params.post?.content }}</p>
   </div>
 </div>

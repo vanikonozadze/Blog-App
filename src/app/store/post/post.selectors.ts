@@ -3,10 +3,6 @@ import { PostState } from './post.reducer';
 
 export const selectPostState = createFeatureSelector<PostState>('posts');
 
-export const selectPost = createSelector(selectPostState, (state) => {
-  return state.data;
-});
-
 export const selectPosts = createSelector(
   selectPostState,
   (state) => state.data,
@@ -14,13 +10,9 @@ export const selectPosts = createSelector(
 
 export const selectPostById = (id: string | null) =>
   createSelector(selectPostState, (state) => {
-    return state.data.find((post) => post.id === id);
+    if (!id) return null;
+    return state.data.find((post) => post.id === id) || null;
   });
-
-export const selectPostFilter = createSelector(
-  selectPostState,
-  (state: PostState) => state.filter,
-);
 
 export const selectFilteredPosts = createSelector(
   selectPostState,

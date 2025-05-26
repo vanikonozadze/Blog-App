@@ -41,6 +41,26 @@ export const postReducer = createReducer(
     loading: false,
     error,
   })),
+  on(PostActions.loadPostById, (state) => ({
+    ...state,
+    loading: true,
+    error: null,
+  })),
+  on(PostActions.loadPostByIdSuccess, (state, { post }) => ({
+    ...state,
+    loading: false,
+    error: null,
+    currentPost: post,
+    data: state.data.some((p) => p.id === post.id)
+      ? state.data
+      : [...state.data, post],
+  })),
+
+  on(PostActions.loadPostByIdFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
+  })),
   on(PostActions.deletePostSuccess, (state, { id }) => ({
     ...state,
     data: state.data.filter((p) => p.id !== id),

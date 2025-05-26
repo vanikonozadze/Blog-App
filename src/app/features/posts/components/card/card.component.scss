@@ -14,19 +14,23 @@
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
-  .post-card-header {
+  &__header{
     margin-bottom: 1rem;
-    .post-card-title {
+    &-title{
       font-size: 1.25rem;
       font-weight: 600;
       margin: 0;
     }
-    .post-card-subtitle {
+    &-subtitle{
       font-size: 0.9rem;
       margin: 0;
+      color: #666;
+      strong {
+        font-weight: 600;
+      }
     }
   }
-  .post-card-content {
+  &-content{
     font-size: 1rem;
     line-height: 1.6;
     flex-grow: 1;
@@ -35,7 +39,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .post-card-actions {
+  &-actions{
     padding-top: 1rem;
     display: flex;
     justify-content: space-between;

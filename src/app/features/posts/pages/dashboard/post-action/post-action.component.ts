@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+  ViewChild,
+} from '@angular/core';
 import { ActionComponent } from '../../../components/action/action.component';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
@@ -13,6 +19,7 @@ import { IPost } from '../../../../../core/models/post.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostActionComponent {
+  @ViewChild(ActionComponent) actionComponent!: ActionComponent;
   private readonly route = inject(ActivatedRoute);
 
   public actionType: string | null =
@@ -20,4 +27,10 @@ export class PostActionComponent {
   public post$: Observable<IPost | null> = this.route.data.pipe(
     map((data) => data['client']),
   );
+
+  hasUnsavedChanges(): boolean {
+    return this.actionComponent
+      ? this.actionComponent.hasUnsavedChanges()
+      : false;
+  }
 }

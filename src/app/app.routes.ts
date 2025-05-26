@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { postResolver } from './core/resolvers/post.resolver';
 import { NoAuthGuard } from './core/guards/no-auth.guard';
+import { postActionDeactivateGuard } from './core/guards/post-action-deactivate';
 
 export const routes: Routes = [
   {
@@ -32,6 +33,7 @@ export const routes: Routes = [
           import(
             './features/posts/pages/dashboard/post-action/post-action.component'
           ).then((c) => c.PostActionComponent),
+        canDeactivate: [postActionDeactivateGuard],
       },
       {
         path: 'home/posts/:id',
@@ -52,6 +54,7 @@ export const routes: Routes = [
         resolve: {
           client: postResolver,
         },
+        canDeactivate: [postActionDeactivateGuard],
       },
     ],
   },

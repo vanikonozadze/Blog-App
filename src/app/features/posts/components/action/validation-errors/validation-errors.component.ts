@@ -19,7 +19,7 @@ export class ValidationErrorsComponent implements OnChanges {
   @Input() errors: ValidationErrors | null = null;
   @Input() customErrorMessages: Record<string, string> = {};
 
-  defaultMessages: Record<string, string> = {
+  private defaultMessages: Record<string, string> = {
     required: 'This field is required.',
     minlength: 'Too short.',
     maxlength: 'Too long.',
@@ -27,7 +27,7 @@ export class ValidationErrorsComponent implements OnChanges {
     pattern: 'Invalid format.',
   };
 
-  errorMessages: Record<string, string> = {};
+  public errorMessages: Record<string, string> = {};
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['customErrorMessages']) {

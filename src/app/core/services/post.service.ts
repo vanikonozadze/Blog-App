@@ -15,6 +15,10 @@ export class PostService {
     return this.http.get<IPost[]>(this.BASE_URL);
   }
 
+  public getPostById$(id: string): Observable<IPost> {
+    return this.http.get<IPost>(`${this.BASE_URL}/${id}`);
+  }
+
   public createPost$(post: IPost): Observable<IPost> {
     return this.http.post<IPost>(this.BASE_URL, post);
   }

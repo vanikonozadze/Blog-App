@@ -1,14 +1,15 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   inject,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import {
   FormControl,
   FormGroup,
-  isFormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
@@ -35,6 +36,9 @@ export class ActionComponent implements OnInit {
   private readonly store = inject(Store<AppState>);
   private readonly router = inject(Router);
   private existingIds = new Set<string | number>();
+
+  private initialFormValue: any = {};
+  private formSubmitted = false;
 
   public postForm = new FormGroup({
     id: new FormControl(''),
@@ -70,6 +74,9 @@ export class ActionComponent implements OnInit {
         content: this.postData.content,
       });
     }
+
+    this.initialFormValue = { ...this.postForm.value };
+
     this.store
       .select(selectPosts)
       .pipe(take(1))
@@ -81,35 +88,46 @@ export class ActionComponent implements OnInit {
   public submitAction(): void {
     if (this.postForm.valid) {
       this.postForm.disable();
+      this.formSubmitted = true;
 
       const formValue = this.postForm.value;
 
-      let _post: IPost;
+      const _post: IPost = {
+        id:
+          this.actionType === 'edit'
+            ? (formValue.id as string)
+            : generateUniqueId(this.existingIds),
+        title: formValue.title as string,
+        author: formValue.author as string,
+        date: formValue.date as string,
+        description: formValue.description as string,
+        content: formValue.content as string,
+      };
 
       if (this.actionType === 'edit') {
-        _post = {
-          id: formValue.id as string,
-          title: formValue.title as string,
-          author: formValue.author as string,
-          date: formValue.date as string,
-          description: formValue.description as string,
-          content: formValue.content as string,
-        };
         this.store.dispatch(updatePost({ post: _post }));
       } else {
-        _post = {
-          id: generateUniqueId(this.existingIds),
-          title: formValue.title as string,
-          author: formValue.author as string,
-          date: formValue.date as string,
-          description: formValue.description as string,
-          content: formValue.content as string,
-        };
         this.store.dispatch(addPost({ post: _post }));
       }
-      this.router.navigate(['/home']);
+
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 0);
     }
   }
 
-  protected readonly isFormGroup = isFormGroup;
+  public hasUnsavedChanges(): boolean {
+    if (this.formSubmitted) {
+      return false;
+    }
+
+    const currentValue = this.postForm.value;
+
+    return Object.keys(currentValue).some((key) => {
+      const currentVal = currentValue[key as keyof typeof currentValue];
+      const initialVal =
+        this.initialFormValue[key as keyof typeof this.initialFormValue];
+      return currentVal !== initialVal;
+    });
+  }
 }

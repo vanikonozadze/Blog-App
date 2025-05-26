@@ -39,15 +39,16 @@
         }
       }
     }
+    &__theme-control{
+      width: 190px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
   }
   h1{
     font-weight: bold;
-  }
-  .theme-control {
-    width: 190px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    font-size: 3.5rem;
   }
 }
 

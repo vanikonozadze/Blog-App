@@ -8,6 +8,9 @@ import {
   deletePost,
   deletePostFailure,
   deletePostSuccess,
+  loadPostById,
+  loadPostByIdFailure,
+  loadPostByIdSuccess,
   loadPosts,
   loadPostsFailure,
   loadPostsSuccess,
@@ -33,6 +36,20 @@ export class postEffects {
           catchError((err) => of(loadPostsFailure({ error: err.message }))),
         );
       }),
+    ),
+  );
+
+  loadPostById$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadPostById),
+      switchMap((action) =>
+        this.postService.getPostById$(action.id).pipe(
+          map((post) => loadPostByIdSuccess({ post })),
+          catchError((error) =>
+            of(loadPostByIdFailure({ error: error.message })),
+          ),
+        ),
+      ),
     ),
   );
 

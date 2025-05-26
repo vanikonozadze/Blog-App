@@ -1,48 +1,55 @@
 .post-details {
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   font-family: 'Segoe UI', sans-serif;
   color: #333;
-  line-height: 1.6;
+  line-height: 1.75;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  }
+  &__header {
+    margin-bottom: 2.5rem;
 
-  .post-header {
-    margin-bottom: 2rem;
-
-    .post-title {
+    &-title {
       font-size: 2rem;
-      color: #000;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      color: #111;
+      margin-bottom: 0.75rem;
     }
 
-    .post-meta {
-      font-size: 0.9rem;
-      color: #888;
-      margin-bottom: 1rem;
+    &-meta {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1.25rem;
 
-      .post-author {
+      span {
         font-weight: 500;
-      }
+        margin-right: 0.75rem;
 
-      .post-date {
-        margin-left: 0.5rem;
+        &:not(:last-child)::after {
+          content: '•';
+          margin-left: 0.75rem;
+          color: #aaa;
+        }
       }
     }
 
-    .post-description {
+    &-description {
       font-size: 1.1rem;
       font-style: italic;
       color: #555;
     }
   }
 
-  .post-content {
-    font-size: 1.05rem;
+  &__content {
+    font-size: 1.1rem;
     color: #444;
     white-space: pre-line;
+    line-height: 1.8;
   }
 }

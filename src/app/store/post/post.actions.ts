@@ -12,6 +12,21 @@ export const loadPostsFailure = createAction(
   props<{ error: string }>(),
 );
 
+export const loadPostById = createAction(
+  '[Post] Load Post By Id',
+  props<{ id: string }>(),
+);
+
+export const loadPostByIdSuccess = createAction(
+  '[Post] Load Post By Id Success',
+  props<{ post: IPost }>(),
+);
+
+export const loadPostByIdFailure = createAction(
+  '[Post] Load Post By Id Failure',
+  props<{ error: string }>(),
+);
+
 export const deletePost = createAction(
   '[Post] Delete Post',
   props<{ id: string }>(),
