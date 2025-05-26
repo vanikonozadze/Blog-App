@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  signal,
   ViewChild,
 } from '@angular/core';
 import { ActionComponent } from '../../../components/action/action.component';
