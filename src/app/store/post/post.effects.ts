@@ -39,7 +39,7 @@ export class postEffects {
     ),
   );
 
-  loadPostById$ = createEffect(() =>
+  _loadPostById$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loadPostById),
       switchMap((action) =>
