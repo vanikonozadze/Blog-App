@@ -16,4 +16,6 @@
 - Async pipes
 - Reactive Forms
 - Custom directives
+- Signals
+- Reusable components
 - Unit tests
