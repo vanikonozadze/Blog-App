@@ -8,10 +8,10 @@
   <button (click)="prevPage()" [disabled]="params.currentPage === 1">
     Previous
   </button>
-  <span>Page {{ params.currentPage }} of {{ params.totalPages }}</span>
+  <span>Page {{ params.currentPage }} of {{ params.totalPages || 1 }}</span>
   <button
     (click)="nextPage()"
-    [disabled]="params.currentPage === params.totalPages"
+    [disabled]="(params.currentPage === params.totalPages) || params.totalPages === 0"
   >
     Next
   </button>

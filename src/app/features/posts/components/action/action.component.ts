@@ -38,7 +38,7 @@ export class ActionComponent implements OnInit {
   private readonly router = inject(Router);
   private existingIds = new Set<string | number>();
 
-  private initialFormValue: any = {};
+  private initialFormValue = {};
   private formSubmitted = false;
 
   public postForm = new FormGroup({
@@ -47,12 +47,12 @@ export class ActionComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(100),
-      Validators.pattern(/^[A-Za-z\s]+$/),
     ]),
     author: new FormControl('', [
       Validators.required,
       Validators.minLength(2),
       Validators.maxLength(50),
+      Validators.pattern(/^[A-Za-z\s]+$/),
     ]),
     date: new FormControl('', Validators.required),
     description: new FormControl('', [
@@ -90,6 +90,10 @@ export class ActionComponent implements OnInit {
   }
 
   public submitAction(): void {
+    if (this.formSubmitted || this.postForm.disabled) {
+      return;
+    }
+
     if (this.postForm.valid) {
       this.postForm.disable();
       this.formSubmitted = true;
@@ -116,7 +120,7 @@ export class ActionComponent implements OnInit {
 
       setTimeout(() => {
         this.router.navigate(['/home']);
-      }, 0);
+      }, 50);
     }
   }
 

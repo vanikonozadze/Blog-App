@@ -1,18 +1,10 @@
 {
   "posts": [
     {
-      "id": "2",
-      "title": "Deploying Angular Apps with Firebase Hosting",
-      "author": "Mike Brown",
-      "date": "2024-02-22T14:15:00Z",
-      "description": "A comprehensive step-by-step guide to deploying your Angular applications using Firebase Hosting, covering setup, configuration, and best practices.",
-      "content": "Firebase Hosting provides a fast and secure way to host your Angular applications. In this tutorial, we will start by setting up the Firebase CLI, initializing your Angular project for deployment, and then deploying the app to Firebase Hosting. You'll learn how to manage your hosting settings, use custom domains, and configure HTTPS. Additionally, we discuss performance optimizations and how to handle routing in single-page applications. By the end of this guide, your Angular app will be live and accessible globally with minimal configuration."
-    },
-    {
       "id": "4",
       "title": "Understanding RxJS Operators - Part 2",
       "author": "Sara Lee",
-      "date": "2024-04-11T12:00:00Z",
+      "date": "2024-04-11",
       "description": "Delve deeper into the world of RxJS with an in-depth look at advanced operators that can help streamline your reactive programming.",
       "content": "In Part 2 of our RxJS operators series, we explore some of the more advanced operators such as switchMap, concatMap, exhaustMap, and mergeMap. These operators are crucial when handling higher-order Observables and managing asynchronous data streams efficiently. We'll cover practical use cases, differences between these operators, and tips for choosing the right one in different scenarios. Examples include API call management, cancelling previous requests, and orchestrating complex event streams."
     },
@@ -20,7 +12,7 @@
       "id": "5",
       "title": "RxJS in Angular",
       "author": "Sara Lee",
-      "date": "2024-04-12T13:00:00Z",
+      "date": "2024-04-12",
       "description": "Learn how to integrate RxJS into your Angular applications effectively to handle asynchronous events and data streams.",
       "content": "RxJS is the backbone of reactive programming in Angular. This article guides you through the basics of using RxJS in Angular apps, including how to create Observables, subscribe to them, and use operators for transforming streams. We cover Angular-specific use cases such as HTTP requests, event handling, and reactive forms. Best practices for memory management, like using the async pipe and unsubscribing, are also discussed to help you write clean and efficient Angular code."
     },
@@ -28,7 +20,7 @@
       "id": "6",
       "title": "RxJS Error Handling",
       "author": "Sara Lee",
-      "date": "2024-04-13T14:00:00Z",
+      "date": "2024-04-13",
       "description": "Master the art of error handling in RxJS to build resilient and user-friendly Angular applications.",
       "content": "Error handling is a critical aspect of reactive programming. This article focuses on different strategies to catch and manage errors in RxJS streams. You'll learn about the catchError operator, retry mechanisms, fallback values, and how to propagate errors downstream. We also look at how to integrate error handling with Angular services and UI notifications, ensuring your app gracefully handles failures without crashing or degrading user experience."
     },
@@ -36,41 +28,25 @@
       "id": "7",
       "title": "RxJS Subjects & BehaviorSubjects",
       "author": "Sara Lee",
-      "date": "2024-04-14T15:00:00Z",
+      "date": "2024-04-14",
       "description": "Explore the power of Subjects and BehaviorSubjects in RxJS for multicasting and state management within Angular.",
       "content": "Subjects in RxJS act as both an Observable and Observer, allowing you to multicast values to multiple subscribers. This article dives into the differences between Subject, BehaviorSubject, ReplaySubject, and AsyncSubject. We provide examples of how to use BehaviorSubject to maintain and share application state reactively. Learn how these constructs simplify communication between Angular components and services, enabling more modular and maintainable code."
     },
     {
-      "id": "8",
-      "title": "RxJS Multicasting",
-      "author": "Sara Lee",
-      "date": "2024-04-15T16:00:00Z",
-      "description": "Optimize your RxJS streams with multicasting techniques to prevent redundant operations and improve performance.",
-      "content": "Multicasting in RxJS allows multiple subscribers to share a single execution of an Observable, avoiding duplicated side-effects and unnecessary computations. This article covers how to implement multicasting using operators like share, shareReplay, and publish. We discuss scenarios such as HTTP request sharing and event broadcasting within Angular apps. Learn best practices for using multicasting to optimize resource usage and improve responsiveness."
+      "id": "966916814",
+      "title": "AAAAAAAAAAAAAAAAAAasdgwegw",
+      "author": "AAAAAAAAAAAAAAAAAAasdgwegw",
+      "date": "2025-05-22",
+      "description": "AAAAAAAAAAAAAAAAAAasdgwegw",
+      "content": "AAAAAAAAAAAAAAAAAAasdgwegw"
     },
     {
-      "id": "9",
-      "title": "RxJS Best Practices",
-      "author": "Sara Lee",
-      "date": "2024-04-16T17:00:00.000Z",
-      "description": "Essential tips and best practices for writing clean, efficient, and maintainable RxJS code in Angular applications.",
-      "content": "RxJS offers great power but can be complex. This article shares practical best practices to help you avoid common pitfalls. Topics include managing subscriptions, avoiding memory leaks, using the async pipe, structuring complex streams, and testing RxJS code. By following these guidelines, you can write code that is easier to understand, debug, and scale."
-    },
-    {
-      "id": "10",
-      "title": "RxJS Memory Leaks",
-      "author": "Sara Lee",
-      "date": "2024-04-17T18:00:00Z",
-      "description": "Identify and avoid memory leaks in RxJS to ensure your Angular applications run smoothly and efficiently.",
-      "content": "Memory leaks in Angular apps often arise from improper subscription management in RxJS streams. This article explains how leaks happen and provides strategies to prevent them, including using the async pipe, takeUntil operator, and manual unsubscription. We also cover tools and techniques for detecting memory leaks during development and production. Keeping your app leak-free is key to maintaining performance and stability."
-    },
-    {
-      "id": "644901468",
-      "title": "fsdfgw",
-      "author": "534534",
-      "date": "2025-05-10",
-      "description": "345345345345",
-      "content": "3534534345345345345345"
+      "id": "739176748",
+      "title": "AAAAAAAAAAAAAAAAAAasdgwegwAAAAAAAAAAAAAAAAAAasdgwegw",
+      "author": "AAAAAAAAAAAAAAAAAAa",
+      "date": "2025-05-01",
+      "description": "AAAAAAAAAAAAAAAAAAasdgwegwAAAAAAAAAAAAAAAAAAasdgwegw",
+      "content": "AAAAAAAAAAAAAAAAAAasdgwegwAAAAAAAAAAAAAAAAAAasdgwegw"
     }
   ]
 }
