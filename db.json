@@ -31,22 +31,6 @@
       "date": "2024-04-14",
       "description": "Explore the power of Subjects and BehaviorSubjects in RxJS for multicasting and state management within Angular.",
       "content": "Subjects in RxJS act as both an Observable and Observer, allowing you to multicast values to multiple subscribers. This article dives into the differences between Subject, BehaviorSubject, ReplaySubject, and AsyncSubject. We provide examples of how to use BehaviorSubject to maintain and share application state reactively. Learn how these constructs simplify communication between Angular components and services, enabling more modular and maintainable code."
-    },
-    {
-      "id": "966916814",
-      "title": "AAAAAAAAAAAAAAAAAAasdgwegw",
-      "author": "AAAAAAAAAAAAAAAAAAasdgwegw",
-      "date": "2025-05-22",
-      "description": "AAAAAAAAAAAAAAAAAAasdgwegw",
-      "content": "AAAAAAAAAAAAAAAAAAasdgwegw"
-    },
-    {
-      "id": "739176748",
-      "title": "AAAAAAAAAAAAAAAAAAasdgwegwAAAAAAAAAAAAAAAAAAasdgwegw",
-      "author": "AAAAAAAAAAAAAAAAAAa",
-      "date": "2025-05-01",
-      "description": "AAAAAAAAAAAAAAAAAAasdgwegwAAAAAAAAAAAAAAAAAAasdgwegw",
-      "content": "AAAAAAAAAAAAAAAAAAasdgwegwAAAAAAAAAAAAAAAAAAasdgwegw"
     }
   ]
 }
